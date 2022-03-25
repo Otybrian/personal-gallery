@@ -1,3 +1,4 @@
+from unicodedata import category
 from django.db import models
 
 # Create your models here.
@@ -12,6 +13,16 @@ class Category(models.Model):
 
     def delete_category(self):
         self.delete()
+
+    @classmethod
+    def search_by_name(cls, search_term):
+        category = cls.objects.filter(name__icontains=search_term)
+        return category
+
+    @classmethod
+    def display_searched():
+        category=Image.objects.all()
+        return category
 
 class Location(models.Model):
     name = models.CharField(max_length=50)
