@@ -22,4 +22,6 @@ def search_results(request):
 
     return render(request, 'search.html')
 
-
+def viewPhoto(request, pk=int):
+    photo = Image.objects.get(id=pk)
+    return render(request, 'photo.html', {'photo':photo})
