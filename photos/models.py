@@ -4,6 +4,28 @@ import datetime as dt
 
 # Create your models here.
 
+class category(models.Model):
+    category_name=models.CharField(max_length=100,blank=True,null=True )
+    
+
+    def __str__(self):
+        return self.category_name
+
+    def save_categories(self):
+        self.save()
+
+    def delete_category(self):
+        self.delete()
+
+    @classmethod
+    def search_by_category_name(cls,search_term):
+        category = cls.objects.filter(category_name__icontains=search_term)
+        return category
+
+    def display_searched():
+        category=Image.objects.all()
+        return category
+
 class Location(models.Model):
     location_name=models.CharField(max_length=50,blank=False ,null=True)
     
@@ -16,6 +38,8 @@ class Location(models.Model):
 
     def delete_location(self):
         self.delete()
+
+
 
 
 class Image(models.Model):
@@ -49,28 +73,6 @@ class Image(models.Model):
     def search_by_category(cls, search_term):
         image = Image.objects.filter(category__icontains=search_term)
         return image
-
-class category(models.Model):
-    category_name=models.CharField(max_length=100,blank=True,null=True )
-    
-
-    def __str__(self):
-        return self.category_name
-
-    def save_categories(self):
-        self.save()
-
-    def delete_category(self):
-        self.delete()
-
-    @classmethod
-    def search_by_category_name(cls,search_term):
-        category = cls.objects.filter(category_name__icontains=search_term)
-        return category
-
-    def display_searched():
-        category=Image.objects.all()
-        return category
 
 
 
