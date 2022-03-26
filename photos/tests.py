@@ -1,28 +1,75 @@
 from django.test import TestCase
 from photos.models import Image,Location,category
-
-
 # Create your tests here.
-class LocationTestClass(TestCase):
 
-    # Set up method
+class ImageTestClass(TestCase):
+    #setup method
     def setUp(self):
-        self.nairobi= Location(name = 'Nairobi')
+        self.image1=Image(image="image",name='Flower',description="Nice image")
 
-    # Testing  instance
+    #Testing Instance
+    def test_instance(self):
+        self.assertTrue(isinstance(self.image1,Image))
+
+    def test_save_image(self):
+        self.image1.save_image()
+        images=Image.objects.all()
+        self.assertTrue(len(images)>0)
+
+    def test_delete_images(self):
+        self.image1.save_image()
+        images_record=Image.objects.all()
+        self.image1.delete_image()
+        self.assertTrue(len(images_record)==0)
+
+    def test_update_image(self):
+        current_image=Image.objects.first()
+        new_image=Image.update_image()
+        expected_image=f'{new_image}'
+        self.assertTrue(expected_image,'new_image')
+
+    def test_search_category(self):
+        category=Image.objects.all()
+        search_term='food'
+        db_term=search_term
+        if db_term !=search_term:
+            return('no match')
+
+        else:
+            return(search_term)  
+class CategoryTestClass(TestCase):
+    #setup method
+    def setUp(self):
+        self.nature=category(category_name="nature")
+    #Testing Instance
+    def test_instance(self):
+        self.assertTrue(isinstance(self.nature,category))
+
+    def test_save_categories(self):
+        self.nature.save_categories()
+        categories=category.objects.all()
+        self.assertTrue(len(categories)>0)
+    def test_delete_categories(self):
+        self.nature.save_categories()
+        category_record=category.objects.all()
+        self.nature.delete_category()
+        self.assertTrue(len(category_record)==0)
+
+class LocationTestClass(TestCase):
+    #setup method
+    def setUp(self):
+        self.nairobi=Location(location_name="Nairobi")
+    #Testing Instance
     def test_instance(self):
         self.assertTrue(isinstance(self.nairobi,Location))
 
-     # Testing Save Method for locations
     def test_save_location(self):
         self.nairobi.save_location()
-        locations = Location.objects.all()
-        self.assertTrue(len(locations) > 0)
+        location=Location.objects.all()
+        self.assertTrue(len(location)>0)
 
-
-# class ImageTestClass(TestCase):
-#     #setup method
-#     def setUp(self):
-#         self.myImage=Image(image = 'image', name = 'Nature', description='Nature is beautiful')
-
-#     #Test instance
+    def test_delete_location(self):
+        self.nairobi.save_location()
+        location_record=Location.objects.all()
+        self.nairobi.delete_location()
+        self.assertTrue(len(location_record)==0)
