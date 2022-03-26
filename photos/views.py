@@ -1,27 +1,24 @@
-from django.shortcuts import render, redirect
-import datetime as dt
-from .models import Category, Location, Image
-
-
-
+from django.shortcuts import render
+from django.http  import HttpResponse
+from .models import Image
 # Create your views here.
 
-def gallery(request):
-    category = request.GET.get('category')
-    if category==None:
-        photos=Image.objects.all()
-    else:
-        photos=Image.objects.filter(category__name = category)
-        images = Category.objects.all()
-        display={'images':images, 'photos': photos}
+def welcome(request):
+    return render(request, 'welcome.html')
 
-    return render(request, 'gallery.html', display)
+def display_page(request):
+    image = Image.display_images()
+    return render(request, 'all.html', {"image":image})
 
 def search_results(request):
 
+    if 'category' in request.GET and request.GET["category"]:
+        search_term = request.GET.get("category")
+        searched_images = Image.search_by_category(search_term)
+        message = f"{search_term}"
 
-    return render(request, 'search.html')
+        return render(request, 'search.html',{"message":message,"categories": searched_images})
 
-def viewPhoto(request, pk=int):
-    photo = Image.objects.get(id=pk)
-    return render(request, 'photo.html', {'photo':photo})
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',{"message":message})
