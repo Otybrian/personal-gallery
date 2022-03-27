@@ -18,9 +18,11 @@
                     <div class="card-body">
                         <small>Image Name: {{ image.name }}</small><br>
                         <small>Description: {{ image.description }}</small><br>
-                        <small><a href="{{ image.link }}"><button type="button" class="btn btn-primary">Link to Image</button></a></small><br>
+                        <input type="text" value="{{ image.link }}" id="myInput">
+                        <small><button onclick = 'copyLink()' type="button" class="btn btn-primary">Copy Link to Image</button></a></small><br>
                         <small>Posted by: {{ image.editor}}</small><br>
                         <small>On: {{ image.posted_date }}</small>
+                        <small style='align-items: right;'><a href="{% url 'display' %}"><button type="button" class="btn btn-danger">Go back to main page</button></a></small><br>
                     </div>
 
                 </div>
@@ -28,5 +30,15 @@
             {% endfor %}
         </div>
     </div>
+    <script>
+function copyLink(){
+    var copyText = document.getElementById("myInput");
+
+    copyText.select();
+    copyText.setSelectionRange(0, 500);
+    navigator.clipboard.writeText(copyText.value);
+    alert('Link copied:' + copyText.value);
+}
+    </script>
 </body>
 {% endblock %}

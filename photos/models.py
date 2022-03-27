@@ -1,5 +1,5 @@
 from django.db import models
-
+import pyperclip
 # Create your models here.
 
 class Editor(models.Model):
@@ -73,6 +73,10 @@ class Image(models.Model):
         image = Image.objects.get(pk = id)
         return image
 
-    
+
+    @classmethod
+    def copy_link(cls, link):
+        link = Image.objects.filter(link)
+        pyperclip.copy(link)
 
  
