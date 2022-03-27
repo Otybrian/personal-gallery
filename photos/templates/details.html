@@ -16,12 +16,11 @@
                     {% endif %}
 
                     <div class="card-body">
-                        <small>{{ image.name }}</small><br>
-                        <small>{{ image.description }}</small><br>
-                        <small>{{ image.category_name }}</small><br>
-                        <small>{{ image.link }}</small><br>
-                        <small>{{ image.editor}}</small>
-                        <small>{{ image.posted_date }}</small>
+                        <small>Image Name: {{ image.name }}</small><br>
+                        <small>Description: {{ image.description }}</small><br>
+                        <small><a href="{{ image.link }}"><button type="button" class="btn btn-primary">Link to Image</button></a></small><br>
+                        <small>Posted by: {{ image.editor}}</small><br>
+                        <small>On: {{ image.posted_date }}</small>
                     </div>
 
                 </div>
