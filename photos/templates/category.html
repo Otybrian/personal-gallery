@@ -2,13 +2,10 @@
 
 {% block content %}
 {{block.super}}
-{% for category in categorys %}
-<h1>Photos in {{category.name }}</h1>
-{% for Image in category.image_set.all %}
+{% for image in image %}
 <h3>{{ image.name }}</h3>
 {% if image.screenshot %}
 <img src="{{image.screenshot.url}}">
 {% endif %}
-{% endfor %}
 {% endfor %}
 {% endblock %}

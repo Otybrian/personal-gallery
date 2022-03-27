@@ -21,6 +21,7 @@ def my_category(request):
     }
     return render(request, 'category.html', context)
 
+
 def search_results(request):
 
     if 'category_name' in request.GET and request.GET["category_name"]:
@@ -34,3 +35,4 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
+

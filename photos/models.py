@@ -72,3 +72,5 @@ class Image(models.Model):
     def image_by_id(self):
         image = Image.objects.get(pk = id)
         return image
+
+ 

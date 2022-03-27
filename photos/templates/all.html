@@ -3,26 +3,37 @@
 {% block content %}
 {{block.super}}
 <div class="container">
-    <div class="col-sm-4 col-md-4">
+    <div class='row'>
+        <div class="col-sm-3 col-md-3">
 
-        <form class="navbar-form" role="search" action="{% url 'search_results' %}">
-  
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search by category" name="category_name">
-              <button class="btn btn-default" type="submit"><i class="search"></i>Search</button>
+            <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search by category" name="category_name">
+                    <button class="btn btn-default" type="submit"><i class="search"></i>Search</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-9  col-sm-9 col-md-4 col-lg-9">
+            <div class="row">
+                {% for image in image %}
+                <div class=" col-sm-4 col-md-4 col-lg-4">
+                    <div class="card my-2 ">
+                        {% if image.screenshot %}
+                        <a style="text-decoration: none;" href="" class="btn btn-outline-light btn-sm m-1">
+                            <img class="image-thumbail" src="{{image.screenshot.url}}" width="100px"
+                                alt="Card image cap"></a>
+                        {% endif %}
+
+                        <div class="card-body">
+                            <small>Name: {{ image.name }}</small>
+                        </div>
+
+                    </div>
+                </div>
+                {% endfor %}
             </div>
-
-
-    {% for image in image %}
-<div class="row">
-    <!-- displaying News articles -->
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <h2 class="text-center"> Name: {{ image.name }} </h2>
-      {% if image.screenshot %}
-      <img src="{{image.screenshot.url}}">
-{% endif %}
-</div>
-{% endfor %}
-</div>
+        </div>
+    </div>
 </div>
 {% endblock %}

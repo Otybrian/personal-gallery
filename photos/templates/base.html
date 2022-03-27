@@ -9,14 +9,25 @@
   <title>Document</title>
   {% block styles %}
   <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
   {% endblock %}
-
+<style>
+  #bg{
+    background-image: url('{% static "images/background.jpg"%}');
+    background-size: 1800px 900px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+  }
+</style>
 </head>
 
 <body>
+  <div id="bg">
   {% include "navbar.html" %}
   {% block content %}
   {%endblock%}
+  </div>
 </body>
 
 </html>
