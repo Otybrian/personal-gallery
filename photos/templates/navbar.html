@@ -62,42 +62,23 @@
 
 <body>
     {% block navbar%}
-    {% load static %}<img src="{% static 'icon.jpg' %}" style="width:50px;" class="img" alt="navbar">
+    {% load static %}<img src="{% static 'icon.jpg' %}" style="width:89px;" class="img" alt="logo">
 
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
     
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="/home"><i class="fa fa-fw fa-home"></i>HOME</a>
-        <a href="/">About</a>
-        <a href="/dashboard">Categories</a>
-        <a href="/dashboard">dashboard</a>
-        <a href="#">RECRUITMENT</a>
-
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                aria-expanded="false">Activities <span class="caret"></span></a>
-            <ul class="dropdown-menu" aria-labelledby="about-us">
-                <li><a href="#">Offers</a></li>
-                <li><a href="#">Leave</a></li>
-                <li><a href="#">Experience</a></li>
-                <li> <a href="">Education</a> </li>
-                {% if current_user.is_authenticated %}
-                <li><a class="dropdown-item" href="#">{{current_user.username}}</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Logout</a></li>
-                {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style='margin-right:30px'><i
-                        class="fas fa-sign-in-alt"></i>&nbsp; <strong>Log In</strong></a>
-                  </li>
-                <li class="nav-item">
-                    <a style='margin-right:30px' class="nav-link" href="#"><i
-                        class="fas fa-user-plus"></i></i>&nbsp; <strong>Sign Up</strong></a>
-                  </li>
-                  {%endif%}
-            </ul>
-        </li>
+        <a href="{% url 'display' %}"><i class="fa fa-fw fa-home"></i>HOME</a>
+        <a href="{% url 'welcome' %}">About</a>
+        <a href="#">CATEGORIES</a>
+        <a href="#">Cities</a>
+        <a href="#">Nature</a>
+        <a href="#">Cars</a>
+        <a href="#">Technology</a>
+        <a href="#">Waters</a>
+        <a href="#">Sports</a>
+        <a href="#">Fashion</a>
+        <a href="#">Roads</a>
         </ul>
 
     </div>
