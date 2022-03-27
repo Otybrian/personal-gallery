@@ -68,6 +68,12 @@ TEMPLATES = [
         },
     },
 ]
+# Name, Max Width (inclusive)
+DEFAULT_BREAKPOINTS = {
+    'phone': 480,
+    'tablet': 767,
+    'desktop': None,
+}
 
 WSGI_APPLICATION = 'gallery.wsgi.application'
 
