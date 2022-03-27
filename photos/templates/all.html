@@ -6,6 +6,10 @@
     .cat button{
         width: 150px;
     }
+    .input-group button {
+        background-color: green;
+        margin-left: 10px;
+    }
 </style>
 <div class="container">
     <div class='row'>
@@ -14,7 +18,7 @@
             <form class="navbar-form" role="search" action="{% url 'search_results' %}">
 
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search by category" name="category_name">
+                    <input type="text" class="form-control" placeholder="Search by category" name="category_name"><br><br>
                     <button class="btn btn-default" type="submit"><i class="search"></i>Search</button>
                 </div>
             </form>
@@ -37,7 +41,7 @@
                     <div class="card my-3 ">
                         {% if image.screenshot %}
                         <a style="text-decoration: none;" href="" class="btn btn-outline-light btn-sm m-1">
-                            <img class="image-thumbail" src="{{image.screenshot.url}}" width="235px" height="150px"
+                            <img class="image-thumbail" src="{{image.screenshot.url}}" width="235px" height="170px"
                                 alt="Card image cap"></a>
                         {% endif %}
 
