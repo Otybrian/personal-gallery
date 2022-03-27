@@ -14,4 +14,9 @@ def display_page(request):
     return render(request, 'all.html', {'image':image} )
 
 
-
+def my_category(request):
+    categorys = category.objects.all()
+    context = {
+        'categorys': categorys,
+    }
+    return render(request, 'category.html', context)

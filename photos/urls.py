@@ -5,7 +5,8 @@ from django.conf.urls.static import static
 
 urlpatterns=[
     url('^$',views.welcome,name = 'welcome'),
-     url('^display/$',views.display_page,name = 'welcome'),
+    url('^display/$',views.display_page,name = 'display'),
+    url('^category/$',views.my_category,name = 'category'),
 ]
 
 

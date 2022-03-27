@@ -1,0 +1,11 @@
+{%extends 'base.html'%}
+
+{% block content %}
+{{block.super}}
+{% for category in categorys %}
+<h1>Photos in {{category.name }}</h1>
+{% for Image in category.image_set.all %}
+{{ image.name }}
+{% endfor %}
+{% endfor %}
+{% endblock %}
