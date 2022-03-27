@@ -2,6 +2,11 @@
 
 {% block content %}
 {{block.super}}
+<style>
+    .cat button{
+        width: 150px;
+    }
+</style>
 <div class="container">
     <div class='row'>
         <div class="col-sm-3 col-md-3">
@@ -13,6 +18,17 @@
                     <button class="btn btn-default" type="submit"><i class="search"></i>Search</button>
                 </div>
             </form>
+            <div class='cat'>
+            <h4>Categories available include;</h4>
+<button type="button" class="btn btn-primary btn-lg btn-block">Nature</button><br><br>
+<button type="button" class="btn btn-primary btn-lg btn-block">Technology</button><br><br>
+<button type="button" class="btn btn-primary btn-lg btn-block">Waters</button><br><br>
+<button type="button" class="btn btn-primary btn-lg btn-block">Roads</button><br><br>
+<button type="button" class="btn btn-primary btn-lg btn-block">Sports</button><br><br>
+<button type="button" class="btn btn-primary btn-lg btn-block">Fashion</button><br><br>
+<button type="button" class="btn btn-primary btn-lg btn-block">Roads</button><br><br>
+<button type="button" class="btn btn-primary btn-lg btn-block">Cars</button>
+</div>
         </div>
         <div class="col-md-9  col-sm-9 col-md-4 col-lg-9">
             <div class="row">
