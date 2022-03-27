@@ -21,7 +21,7 @@
         z-index: 1;
         top: 0;
         left: 0;
-        background-color: rgb(202, 190, 190);
+        background-color: rgb(37, 33, 33);
         overflow-x: hidden;
         transition: 0.5s;
         padding-top: 60px;
@@ -70,15 +70,7 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="{% url 'display' %}"><i class="fa fa-fw fa-home"></i>HOME</a>
         <a href="{% url 'welcome' %}">About</a>
-        <a href="#">CATEGORIES</a>
-        <a href="#">Cities</a>
-        <a href="#">Nature</a>
-        <a href="#">Cars</a>
-        <a href="#">Technology</a>
-        <a href="#">Waters</a>
-        <a href="#">Sports</a>
-        <a href="#">Fashion</a>
-        <a href="#">Roads</a>
+        <a href="{% url 'display' %}">Search Categories</a>
         </ul>
 
     </div>

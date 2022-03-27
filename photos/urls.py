@@ -4,10 +4,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns=[
-    url('^$',views.welcome,name = 'welcome'),
-    url('^display/$',views.display_page,name = 'display'),
+    url('^$',views.display_page,name = 'display'),
+    url('^details/$',views.viewDetails,name = 'details'),
+    url('^welcome/$',views.welcome,name = 'welcome'),
     url('^category/$',views.my_category,name = 'category'),
-    url('^search/', views.search_results, name='search_results'),
+    url('^search/', views.search_results, name='search_results'), 
 ]
 
 

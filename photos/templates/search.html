@@ -4,18 +4,17 @@
     <div class="row ">
         <div class="col-md-4">
             {% if category_name%}
-            <h2>Found {{ category_name|length }} of searched term {{message}}</h2>
+            <h2>Found {{ category_name|length }} of search {{message}}</h2>
             {% else %}
             <h2> Found 0 categories for the search term {{message}}</h2>
             {% endif %}
         </div>
         <div class="col-md-4">
-        {% if category_name%}
-        <small>Category:{{category_name}}</small>
-        {% for Image in category_name.image_set.all %}
-        <img src="{{category_name.screenshot.url}}">
-        <h3>{{ image.name }}</h3>
-        {%endfor%}
+        {% if image.screenshot %} 
+        <small>Category: {{message}}</small>
+        <a style="text-decoration: none;" href="#" class="btn btn-outline-light btn-sm m-1" >
+            <img class="image-thumbail" src="{{image.screenshot.url}}" width="235px" height="170px"
+                alt="Card image cap"></a>
         {% endif %}
         </div>
     </div>

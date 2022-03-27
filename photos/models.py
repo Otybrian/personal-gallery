@@ -69,8 +69,10 @@ class Image(models.Model):
         return image
 
     @classmethod
-    def image_by_id(self):
+    def image_by_id(cls):
         image = Image.objects.get(pk = id)
         return image
+
+    
 
  

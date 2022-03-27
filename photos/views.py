@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http  import HttpResponse
 import datetime as dt
-
+from django.views import View
 from photos.models import Image, category
 # Create your views here.
 
@@ -13,6 +13,9 @@ def display_page(request):
     image = Image.objects.all()
     return render(request, 'all.html', {'image':image} )
 
+def viewDetails(request):
+    image = Image.objects.all()
+    return render(request, 'details.html', {'image':image} )
 
 def my_category(request):
     categorys = category.objects.all()
@@ -35,4 +38,5 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
+
 

@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+
+{% block content %}
+{{block.super}}
+
+<body>
+    <div class="container" style='margin-left: 145px;'>
+        <div class='row'>
+            {% for image in image %}
+            <div class=" col-md-9">
+                <div class="card my-3 ">
+                    {% if image.screenshot %}
+                    <a style="text-decoration: none;" href="#" class="btn btn-outline-light btn-sm m-1">
+                        <img class="image-thumbail" src="{{image.screenshot.url}}" width="800px" height="400px"
+                            alt="Card image cap"></a>
+                    {% endif %}
+
+                    <div class="card-body">
+                        <small>{{ image.name }}</small><br>
+                        <small>{{ image.description }}</small><br>
+                        <small>{{ image.category_name }}</small><br>
+                        <small>{{ image.link }}</small><br>
+                        <small>{{ image.editor}}</small>
+                        <small>{{ image.posted_date }}</small>
+                    </div>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+{% endblock %}

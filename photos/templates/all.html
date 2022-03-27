@@ -10,7 +10,12 @@
         background-color: green;
         margin-left: 10px;
     }
+    h4{
+        color: whitesmoke;
+        font-weight: 500;
+    }
 </style>
+<body>
 <div class="container">
     <div class='row'>
         <div class="col-sm-3 col-md-3">
@@ -23,7 +28,7 @@
                 </div>
             </form>
             <div class='cat'>
-            <h4>Categories available include;</h4>
+            <h4>Available Categories;</h4>
 <button type="button" class="btn btn-primary btn-lg btn-block">Nature</button><br><br>
 <button type="button" class="btn btn-primary btn-lg btn-block">Technology</button><br><br>
 <button type="button" class="btn btn-primary btn-lg btn-block">Waters</button><br><br>
@@ -39,14 +44,14 @@
                 {% for image in image %}
                 <div class=" col-sm-4 col-md-4 col-lg-4">
                     <div class="card my-3 ">
-                        {% if image.screenshot %}
-                        <a style="text-decoration: none;" href="" class="btn btn-outline-light btn-sm m-1">
+                        {% if image.screenshot %}                       
+                        <a style="text-decoration: none;" href="{% url 'details' %}" class="btn btn-outline-light btn-sm m-1" >
                             <img class="image-thumbail" src="{{image.screenshot.url}}" width="235px" height="170px"
                                 alt="Card image cap"></a>
                         {% endif %}
 
                         <div class="card-body">
-                            <small>Name: {{ image.name }}</small>
+                            <small>{{ image.name }}</small>
                         </div>
 
                     </div>
@@ -56,4 +61,17 @@
         </div>
     </div>
 </div>
+<script>
+    function showDiv(){
+        var x = document.getElementById('hide');
+        if (x.style.display === 'none'){
+            x.style.display = 'block';
+
+        } else {
+            x.style.display = 'none';
+        }
+    }
+
+</script>
+</body>
 {% endblock %}
