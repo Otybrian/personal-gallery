@@ -1,7 +1,7 @@
-###Photo-Gallery
+### Photo-Gallery
 *Photo gallery is a django website that allows users to  view photos of different categories including; picnic, nature, cars, technology, roads, mountains, forests, and more. The website also gives links to the images on the internet as well as their descriptions and locations where they were taken. 
 
-###Author
+### Author
 
 *[Brian Otieno] (https://github.com/Otybrian) 
 
@@ -9,7 +9,7 @@
 
 *Visit the project live in the internet via the link (https://personal-gallery-22.heroku)
 
-###Technologies Used
+### Technologies Used
 
 * [Python3.8](https://www.python.org/)
 * [Django]
@@ -17,7 +17,7 @@
 * [Bootstrap]
 * [Javascript]
 
-###Installation Process
+### Installation Process
 
 * To get the code;
 1. Clone the repository:
@@ -51,5 +51,5 @@ python3 manage.py runserver
  * Create heroku app
  * Push to heroku
 
- ###License
+ ### License
  *This project is licensed under the MIT License - 
