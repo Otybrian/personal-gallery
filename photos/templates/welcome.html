@@ -7,6 +7,20 @@
     .col-md-6{
         margin-top: 50px;
     }
+    h1{
+        color: #fff;
+        text-align: center;
+    }
+    p{
+        text-align: center;
+        font-size: 18px;
+        font-weight:600;
+    }
+    #down{
+        color: whitesmoke;
+        font-size: 18px;
+        font-weight:600;
+    }
 </style>
 <div class='container'>
     <h1>Welcome to the best photo gallery where you get beautiful photos from all categories</h1>
@@ -15,6 +29,8 @@
 <p>In this website, you are able to access various categories of beautiful photos taken at different places 
     accross the world. 
 </p>
+{% load static %}<img src="{% static 'picnic.jpg' %}" style="width:550px;" class="img" alt="picnic">
+<p id='down'>Take yourself to a virtual trip across the world by viewing different categories of photos</p>
         </div>
         <div class="col-md-6">
 <h4>Categories available include;</h4>
