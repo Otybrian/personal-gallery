@@ -5,9 +5,9 @@
 
 *[Brian Otieno] (https://github.com/Otybrian) 
 
-###Getting started with the website
+### Getting started with the website
 
-*Visit the project live in the internet via the link (https://personal-gallery-22.heroku)
+*Visit the project live in the internet via the link (https://gal1ery.herokuapp.com/)
 
 ### Technologies Used
 
